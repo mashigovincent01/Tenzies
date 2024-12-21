@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "nanoid": "^5.0.9",
-    "react": "^19.1.0-canary-9463d51e-20241219",
-    "react-dom": "^19.1.0-canary-9463d51e-20241219"
+    "react": "^18.3.1",
+    "react-confetti": "^6.1.0",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
