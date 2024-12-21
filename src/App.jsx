@@ -19,13 +19,25 @@ function App() {
     return new Array(10).fill(0).map(()=> Math.ceil(Math.random()*6))
   }
 
-  function rollDice(){
-    setNumbers((oldNumbers) =>
-      oldNumbers.map((die, index) => ({
-        ...die,
-        value: die.isHeld ? die.value : Math.ceil(Math.random() * 6),
+  function rollDice(event){
+    
+    if(event.target.textContent === "Roll"){
+      setNumbers((oldNumbers) =>
+        oldNumbers.map((die, index) => ({
+          ...die,
+          value: die.isHeld ? die.value : Math.ceil(Math.random() * 6),
+        }))
+      );
+    }
+    else{
+      setNumbers(allNewDice().map((number)=> {
+        return {
+          value: number,
+          isHeld: false,
+          id: nanoid()
+        }
       }))
-    );
+    }
   }
 
   function hold(id){
